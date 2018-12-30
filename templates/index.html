@@ -1,10 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>App testing</title>
-</head>
-<body>
 
-</body>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Prediksi Harga Saham</title>
+
+    <!-- Bootstrap core CSS , Jquery, Js-->
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/myCss.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+{#      JQUERY#}
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      {#<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+#}
+
+        <style>
+          .ui-autocomplete-category {
+            font-weight: bold;
+            padding: .2em .4em;
+            margin: .8em 0 .2em;
+            line-height: 1.5;
+          }
+        </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+{#    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>#}
+
+  <script type="text/javascript">
+    $(function () {
+        var lq45List = [
+            "ADHI","ADRO", "AKRA", "AKRA", "ANTM", "ASII",
+            "BBCA", "BBNI", "BBRI", "BBTN", "BJBR", "BKSL",
+            "BMRI", "BRPT", "BSDE", "ELSA", "EXCL", "GGRM",
+            "HMSP", "ICBP", "INCO", "INDF", "INDY", "INKP",
+            "INTP", "ITMG", "JSMR", "KLBF", "LPKR", "LPPF",
+            "MEDC", "MNCN", "PGAS", "PTBA", "SCMA", "SMGR",
+            "SRIL", "SSMS", "TLKM", "TPIA", "UNTR", "UNVR",
+            "WIKA", "WSBP", "WSKT"
+        ];
+        $("#symbols").autocomplete({
+            source: lq45List
+        });
+    });
+
+    ##  $(function () {
+    ##      ## https://jqueryui.com/autocomplete/#multiple-remote
+    ##      function split(val) {
+    ##          return val.split(/, \s*/);
+    ##      }
+    ##      function extractLast(term) {
+    ##          return split(term).pop();
+    ##      }
+    ##
+    ##      $("#symbols")
+    ##              .on("keydown", function (event) {
+    ##                  if (event.keyCode === $.ui.keyCode.TAB && $(this).autocomplete("instance").menu.active){
+    ##                      event.preventDefault();
+    ##                  }
+    ##              })
+    ##              .autocomplete({
+    ##                  source: function (request, response) {
+    ##
+    ##                  }
+    ##              });
+    ##
+    ##      function log(message) {
+    ##          $("<div>").text(message).prependTo("#log");
+    ##          $("#log").scrollTop(0);
+    ##      }
+    ##
+    ##      $("#symbols").autocomplete({
+    ##          source: JSON.parse('{{jinja_list_of_strings | tojson | safe}} '),
+    ##          minLength:1,
+    ##          delay: 10,
+    ##      });
+    ##  })
+  </script>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Prediksi Saham</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+{#            <li class="nav-item">#}
+{#              <a class="nav-link" href="#">Services</a>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#              <a class="nav-link" href="#">Contact</a>#}
+{#            </li>#}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      <form action="/search_result" method="post">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div id="imaginary_container">
+                    <div class="input-group stylish-input-group">
+                        <input id="symbols" name="symbols" type="text" class="form-control"  placeholder="Search" >
+##     {#                    <% %>#}
+                        <span class="input-group-addon">
+                            <button type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </form>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+   {# <script src="../static/jquery/jquery.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>#}
+
+  </body>
+
+{#  untuk JQUERY AUTOCOMPLETE#}
+
+
+    <footer>
+        <div class="footer-copyright text-center py-3">
+            © 2018 Copyright:
+            <a>PrediksiSaham.com</a>
+            <p>Julius Tanuwijaya - 14110110027</p>
+        </div>
+    </footer>
+
+    <script>
+        var param1 = $('#symbols').val();
+
+        $(function () {
+            function log(message) {
+                $( "<div>" ).text( message ).prependTo( "#log" );
+                $( "#log" ).scrollTop( 0 );
+            }
+
+            $("#symbols").autocomplete({
+                ##  let:simbol = $('#symbols').val();
+                source: function (request, response) {
+                    $.ajax({
+                        url: 'https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords='+ param1 +'&apikey=YRWRPB235341U6EM',
+                        dataType: "",
+                        data: {
+                            term: request.term
+                        },
+                        success: function (data) {
+                            response(data);
+                        }
+                    });
+                },
+                minLength: 2,
+                select: function (event, ui) {
+                    log(ui.item.value + "dipilih");
+                }
+            });
+        });
+    </script>
 </html>
