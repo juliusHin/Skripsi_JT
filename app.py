@@ -17,12 +17,12 @@ app = Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
-@app.route('/searchstock', methods=['GET', 'POST'])
-def searchstock():
-    search = request.args.get('searchstock')
-    app.logger.debug(search)
-
-    return jsonify()
+# @app.route('/searchstock', methods=['POST'])
+# def searchstock():
+#     search = request.args.get('searchstock')
+#     app.logger.debug(search)
+#
+#     return jsonify()
 
 
 

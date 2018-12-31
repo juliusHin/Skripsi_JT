@@ -121,7 +121,7 @@
 
     <!-- Page Content -->
     <div class="container">
-      <form action="/search_result" method="post">
+      <form action="/search_result" method="POST">
           <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
                 <div id="imaginary_container">
@@ -171,7 +171,7 @@
                 source: function (request, response) {
                     $.ajax({
                         url: 'https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords='+ param1 +'&apikey=YRWRPB235341U6EM',
-                        dataType: "",
+                        dataType: "jsonp",
                         data: {
                             term: request.term
                         },

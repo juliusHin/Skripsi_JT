@@ -4,15 +4,15 @@ from sqlite3 import Error
 database = "./pythonsqlite.db"
 class DBService:
 
-    def create_connection(database):
-        try:
-            conn = sqlite3.connect(database, isolationlevel=None, checksamethread=False)
-            conn.row_factory = lambda c, r: dict(zip(_[_col_[_0] for col in c.description], r))
-
-            return conn
-
-            except Error as e:
-            print(e)
+    # def create_connection(database):
+    #     try:
+    #         conn = sqlite3.connect(database, isolationlevel=None, checksamethread=False)
+    #         conn.row_factory = lambda c, r: dict(zip(_[_col_[_0] for col in c.description], r))
+    #
+    #         return conn
+    #
+    #         except Error as e:
+    #         print(e)
 
     def create_table(c):
         sql = """
